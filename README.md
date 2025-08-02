@@ -3,7 +3,7 @@
 ![viewfinal](https://github.com/user-attachments/assets/e3cbcbcb-78ef-49ff-a91f-aa035fbf7785)
 
 - [Demo Project](https://aliheydarii.github.io/ToDoList/)
-- 
+
 - Developed by Ali Heydari
 
 - Created - 2 Aug 2025
