@@ -1,8 +1,8 @@
-# ToDoList_LocalStorage - [Demo Project](https://aliheydarii.github.io/ToDoList/)
+# ToDoList_LocalStorage - [Demo Project](https://aliheydarii.github.io/ToDoList_LocalStorage/)
 
 ![viewfinal](https://github.com/user-attachments/assets/e3cbcbcb-78ef-49ff-a91f-aa035fbf7785)
 
-- [Demo Project](https://aliheydarii.github.io/ToDoList/)
+- [Demo Project](https://aliheydarii.github.io/ToDoList_LocalStorage/)
 
 - Developed by Ali Heydari
 
