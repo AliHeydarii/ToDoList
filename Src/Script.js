@@ -1,7 +1,26 @@
-const inp = document.querySelector('.todo>input')
+    const inp = document.querySelector('.todo>input')
     const btn = document.querySelector('.todo>button')
     const list = document.querySelector('#list')
     const deleteList = document.getElementById('garbage')
+    let data = []
+    // get localStorage //
+    let x = JSON.parse(localStorage.getItem('todoNames'))
+    if(x != null){
+        data = x
+        for(let i = 0; i < data.length; i++){
+            let li = document.createElement('li')
+        li.innerHTML = `
+                <span class="line"></span>
+                <h3 class="task-text">${data[i]}</h3>
+                <input class="edit-input" type="text" value="${data[i]}" />
+                <span><input type="checkbox" onchange='fnDel(this)'></span>
+                <span onclick="myEdit(this)">✒️</span>
+                <span onclick="myDel(this)">❌</span>
+            `
+        list.appendChild(li)
+        }
+    }
+    // get localStorage //
     btn.addEventListener('click', () => {
         let temp = inp.value
         if (temp === '') {
@@ -9,6 +28,9 @@ const inp = document.querySelector('.todo>input')
         } else {
             console.log(temp);
             myAdd(temp)
+             //////// set to web storage ////////
+            data.push(temp)
+            localStorage.setItem('todoNames' , JSON.stringify(data))
         }
     })
     function myAdd(temp) {
@@ -22,9 +44,13 @@ const inp = document.querySelector('.todo>input')
                 <span onclick="myDel(this)">❌</span>
             `
         list.appendChild(li)
+        // after append to list //
         inp.value = null
         inp.focus()
+        // after append to list //
+
     }
+
     function fnDel(s) {
         if (s.disabled) {
             return;
@@ -42,7 +68,6 @@ const inp = document.querySelector('.todo>input')
         const taskText = s.parentElement.querySelector('.task-text');
         const editInput = s.parentElement.querySelector('.edit-input');
         const checkbox = s.parentElement.querySelector('input[type="checkbox"]');
-
         if (num % 2) {
             taskText.style.display = 'none';
             editInput.style.display = 'flex';
